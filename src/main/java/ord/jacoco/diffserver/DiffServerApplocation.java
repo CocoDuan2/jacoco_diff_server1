@@ -9,6 +9,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class DiffServerApplocation {
     public static void main(String[] args) {
-        SpringApplication.run(DiffServerApplocation.class);
+        SpringApplication.run(DiffServerApplocation.class,args);
     }
 }
