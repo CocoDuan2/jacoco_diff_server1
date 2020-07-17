@@ -42,7 +42,7 @@ public class DiffTask {
     private String execDir;
     @Value("${report-dir}")
     private String reportDir;
-    @Value("${mysql-jdbc_url}")
+    @Value("${mysql-jdbc-url}")
     private String mysqlJdbcUrl;
     @Value("${mysql-user}")
     private String mysqlUser;
