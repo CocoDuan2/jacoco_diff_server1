@@ -38,8 +38,6 @@ public class DiffTask {
     private String remoteHost;
     @Value("${remote-port}")
     private String remotePort;
-    @Value("${exec-dir}")
-    private String execDir;
     @Value("${report-dir}")
     private String reportDir;
     @Value("${mysql-jdbc-url}")
@@ -49,19 +47,11 @@ public class DiffTask {
     @Value("${mysql-password}")
     private String mysqlPassword;
 
-    @Scheduled(cron = "0 0/5 * * * *")
+    @Scheduled(cron = "0/10 * * * * *")
     public void Diff() {
         try {
-            String execFile;
-            if (Strings.isBlank(execDir)) {
-                execFile = reportDir.endsWith("/") ? reportDir + "exec/sq_jacoco.exec" :
-                        reportDir + "/exec/sq_jacoco.exec";
-            } else {
-
-                execFile = execDir.endsWith("/") ? execDir + "sq_jacoco.exec" :
-                        execDir + "/sq_jacoco.exec";
-            }
-
+            String execFile = reportDir.endsWith("/") ? reportDir + "exec/sq_jacoco.exec" :
+                    reportDir + "/exec/sq_jacoco.exec";
             String[] hosts = remoteHost.split("\\s*,\\s*");
             Integer port = Integer.parseInt(remotePort);
             for (String host : hosts) {
