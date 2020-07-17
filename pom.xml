@@ -38,6 +38,7 @@
 
     <!-- 这个插件，可以将应用打包成一个可执行的jar包；-->
     <build>
+        <finalName>jacoco-diff-server</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
