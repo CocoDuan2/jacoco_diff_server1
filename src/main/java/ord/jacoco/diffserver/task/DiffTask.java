@@ -47,7 +47,7 @@ public class DiffTask {
     @Value("${mysql-password}")
     private String mysqlPassword;
 
-    @Scheduled(cron = "0/10 * * * * *")
+    @Scheduled(cron = "0 0/3 * * * *")
     public void Diff() {
         try {
             String execFile = reportDir.endsWith("/") ? reportDir + "exec/sq_jacoco.exec" :
