@@ -60,7 +60,7 @@ public class DiffTask {
                 //下载exec文件
                 ExecutionDataClient client = new ExecutionDataClient(
                         new File(execFile),
-                        host, port, true
+                        host, port, false
                 );
                 client.dump();
                 if (hosts.length > 0) {
